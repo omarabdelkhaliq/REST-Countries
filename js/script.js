@@ -13,6 +13,7 @@ const countriesContainer = document.querySelector(".countries");
 
 const detailView = document.getElementById("detailView");
 const backBtn = document.getElementById("backBtn");
+const themeText = document.querySelector(".theme button p");
 
 let data = [];
 
@@ -158,8 +159,16 @@ regionOptions.forEach((option) => {
   });
 });
 
+function setTheme(isDark) {
+  mainElement.classList.toggle("dark", isDark);
+  themeIcon.classList.toggle("fa-moon", !isDark);
+  themeIcon.classList.toggle("fa-sun", isDark);
+  themeText.textContent = isDark ? "Light mode" : "Dark mode";
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+}
+
+setTheme(localStorage.getItem("theme") === "dark");
+
 themeBtn.addEventListener("click", function () {
-  mainElement.classList.toggle("dark");
-  themeIcon.classList.toggle("fa-moon");
-  themeIcon.classList.toggle("fa-sun");
+  setTheme(!mainElement.classList.contains("dark"));
 });
