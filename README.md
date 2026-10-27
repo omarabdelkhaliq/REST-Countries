@@ -2,6 +2,10 @@
 
 An interactive web application that allows users to explore countries around the world.
 
+## 📸 Screenshot
+
+![REST Countries App Screenshot](./rest.png)
+
 ## 🚀 Live Demo
 
 [View the Live Demo](https://omarabdelkhaliq.github.io/REST-Countries/)
